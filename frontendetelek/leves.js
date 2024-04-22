@@ -53,39 +53,27 @@ document.addEventListener("DOMContentLoaded", function() {
         for(let leves of levesek){
             tablazat+= etelekSor(leves);
         }
-        etelekDiv.innerHTML = tablazat+"</tbody> </table>";
+        etelekDiv.innerHTML = tablazat+"</div></div>";
     }
     function etelekSor(levesek){
-        let sor=`<tr>
-                    <td>${levesek.megnevezes}</td>
-                    <td>${levesek.kaloria}</td>
-                    <td>${levesek.feherje}</td>
-                    <td>${levesek.zsir}</td>
-                    <td>${levesek.szenhidrat}</td>
-                    <td>${levesek.hamu}</td>
-                    <td>${levesek.rost}</td>
-                    <td>
+        let sor =`<div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="noimage.svg" alt="Leves">
+                    <div class="card-body">
+                        <h4 class="card-text"><b>${levesek.megnevezes}</b></h4>
+                        <p class="card-text">Kalória: ${levesek.kaloria}</p>
+                        <p class="card-text">Fehérje: ${levesek.feherje}</p>
+                        <p class="card-text">Zsir: ${levesek.zsir}</p>
+                        <p class="card-text">Szenhidrát: ${levesek.szenhidrat}</p>
+                        <p class="card-text">Hamu: ${levesek.hamu}</p>
+                        <p class="card-text">Rost: ${levesek.rost}</p>
                         <button type="button" class="btn btn-outline-success" id="select" onclick="adatBetoltes('${levesek.megnevezes}',${levesek.kaloria},${levesek.feherje},${levesek.zsir},${levesek.szenhidrat},${levesek.hamu},${levesek.rost})" >Kiválaszt</button>
                         <button type="button" class="btn btn-outline-danger" id="delete" onclick="adatTorles('${levesek.megnevezes}')" ><i class="fa-solid fa-trash"></i></button>
-                    </td>
-                </tr>`;
+                    </div>
+                </div>`
         return sor;
     }
     function etelekFejlec(){
-        let fejlec=`<table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Megnevezés</th>
-                                <th>Kalória</th>
-                                <th>Fehérje</th>
-                                <th>Zsír</th>
-                                <th>Szénhidrát</th>
-                                <th>Hamu</th>
-                                <th>Rost</th>
-                                <th>Művelet</th>
-                            </tr>
-                        </thead>
-                        <tbody>`;
+        let fejlec=`<div class="row">`;
         return fejlec;
     }
 });
