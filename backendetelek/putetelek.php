@@ -16,7 +16,7 @@ $rost=$adatJson->rost;
 require_once './databaseconnect.php';
 $sql = "UPDATE levesek SET kaloria=?, feherje=?, zsir=?, szenhidrat=?, hamu=?, rost=? WHERE megnevezes=?";
 $stmt = $connection->prepare($sql);
-$stmt->bind_param("iiiiiiis", $kaloria, $feherje, $zsir, $szenhidrat, $hamu, $rost, $megnevezes);  
+$stmt->bind_param("dddddds", $kaloria, $feherje, $zsir, $szenhidrat, $hamu, $rost, $megnevezes);  
 if ($stmt->execute()) {
     http_response_code(201);
     echo 'Sikeresen módosítva';

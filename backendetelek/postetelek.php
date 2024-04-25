@@ -9,7 +9,7 @@ $rost =$_POST["rost"];
 require_once './databaseconnect.php';
 $sql = "INSERT INTO levesek(megnevezes, kaloria, feherje, zsir, szenhidrat, hamu, rost) VALUES (?,?,?,?,?,?,?)";
 $stmt = $connection->prepare($sql);
-$stmt->bind_param("siiiiii", $megnevezes, $kaloria, $feherje, $zsir, $szenhidrat, $hamu, $rost);  
+$stmt->bind_param("sdddddd", $megnevezes, $kaloria, $feherje, $zsir, $szenhidrat, $hamu, $rost);  
 if ($stmt->execute()) {
     http_response_code(201);
     $message=array("message" =>'Sikeresen hozzáadva');

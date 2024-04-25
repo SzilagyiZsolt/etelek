@@ -2,7 +2,7 @@
 $sql = '';
 if (count($kereSzoveg) > 1) {
     if ($kereSzoveg[1]) {
-        $sql = 'SELECT * FROM levesek WHERE megnevezes=' . $kereSzoveg[1];
+        $sql = "SELECT * FROM levesek WHERE megnevezes='".$kereSzoveg[1]."'";
     } else {
         http_response_code(404);
         echo 'Nem létező leves';
